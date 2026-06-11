@@ -15,7 +15,11 @@ spec:
           query: |
             (
               sum(rate(flask_http_request_total{namespace="demo", status=~"5.."}[1m]))
-              /
-              sum(rate(flask_http_request_total{namespace="demo"}[1m]))
+              or vector(0)
+            )
+            /
+            clamp_min(
+              sum(rate(flask_http_request_total{namespace="demo"}[1m])),
+              1
             )
       successCondition: result[0] < 0.1
