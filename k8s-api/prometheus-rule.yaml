@@ -24,6 +24,7 @@ spec:
           labels:
             severity: warning
             app: api
+            namespace: demo
           annotations:
             summary: "API error rate is above 5%"
             description: "More than 5% of API requests are returning 5xx in the last 1 minute."

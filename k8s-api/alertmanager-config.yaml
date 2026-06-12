@@ -10,6 +10,7 @@ spec:
     receiver: personal-email
     matchers:
       - name: alertname
+        matchType: "="
         value: ApiHighErrorRate
   receivers:
     - name: personal-email
