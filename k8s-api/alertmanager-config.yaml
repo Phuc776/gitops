@@ -15,9 +15,9 @@ spec:
     - name: personal-email
       emailConfigs:
         - to: dophuc776@gmail.com
-          from: dophuc776@gmail.com
+          from: hullquan745@gmail.com
           smarthost: smtp.gmail.com:587
-          authUsername: dophuc776@gmail.com
+          authUsername: hullquan745@gmail.com
           authPassword:
             name: gmail-smtp-secret
             key: password
