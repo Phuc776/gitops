@@ -1,0 +1,20 @@
+# Terraform local files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Terraform plan files
+*.tfplan
+
+# Local variable files
+*.tfvars
+*.tfvars.json
+
+# OS/editor
+.DS_Store
+.vscode/
+
+# SMTP / local secrets
+k8s-api/alertmanager-secret.yaml
