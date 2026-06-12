@@ -14,7 +14,7 @@ spec:
         ports: [ { name: http, containerPort: 8080 } ]
         env:
         - { name: ERROR_RATE, value: "0" }
-        - { name: VERSION,    value: "v3" }
+        - { name: VERSION,    value: "v6" }
         readinessProbe: { httpGet: { path: /healthz, port: 8080 } }
   strategy:
     canary:                  # Canary
