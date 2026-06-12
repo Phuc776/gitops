@@ -19,11 +19,11 @@ spec:
             clamp_min(
               sum(rate(flask_http_request_total{namespace="demo"}[1m])),
               1
-            ) > 0.1
-          for: 0m
+            ) > 0.05
+          for: 1m
           labels:
             severity: warning
             app: api
           annotations:
-            summary: "API error rate is above 10%"
-            description: "More than 10% of API requests are returning 5xx in the last 1 minute."
+            summary: "API error rate is above 5%"
+            description: "More than 5% of API requests are returning 5xx in the last 1 minute."
