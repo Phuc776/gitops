@@ -29,4 +29,3 @@ spec:
             summary: "API error rate is above 5%"
             description: "API error rate measured at {{ $value | humanizePercentage }}, above the 5% threshold."
             measured_value: "{{ $value | humanizePercentage }}"
-            evaluated_at: "{{ now | humanizeTimestamp }} UTC"

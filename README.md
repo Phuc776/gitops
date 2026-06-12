@@ -115,8 +115,9 @@ Các threshold:
 | `AnalysisTemplate` | `result[0] < 0.05` | Measurement từ 5% trở lên bị đánh giá Failed; hai measurement Failed làm rollout abort |
 | `PrometheusRule` | Ratio `> 0.05` liên tục 1 phút | Alert `ApiHighErrorRate` firing và được route tới email |
 
-Alert annotation có thêm measured value và Prometheus evaluation time. Email
-tiếp theo sẽ hiển thị `measured_value` và `evaluated_at`.
+Alert annotation có thêm measured value nên email tiếp theo sẽ hiển thị
+`measured_value`. Nếu cần hiển thị thời điểm alert bắt đầu firing, cần custom
+Alertmanager notification template và sử dụng trường `.StartsAt`.
 
 ## Bad Release Được Demo
 
