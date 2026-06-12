@@ -14,7 +14,7 @@ spec:
         ports: [ { name: http, containerPort: 8080 } ]
         env:
         - { name: ERROR_RATE, value: "0.3" }
-        - { name: VERSION,    value: "v7" }
+        - { name: VERSION,    value: "v8" }
         readinessProbe: { httpGet: { path: /healthz, port: 8080 } }
   strategy:
     canary:                  # Canary
@@ -26,7 +26,7 @@ spec:
               - templateName: api-error-rate
 
         - setWeight: 50
-        
+        - pause: { duration: 2m } # pause for 2 minutes to observe the metrics and alerts
         - analysis:
             templates:
               - templateName: api-error-rate
