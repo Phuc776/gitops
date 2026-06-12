@@ -27,4 +27,6 @@ spec:
             namespace: demo
           annotations:
             summary: "API error rate is above 5%"
-            description: "More than 5% of API requests are returning 5xx in the last 1 minute."
+            description: "API error rate measured at {{ $value | humanizePercentage }}, above the 5% threshold."
+            measured_value: "{{ $value | humanizePercentage }}"
+            evaluated_at: "{{ now | humanizeTimestamp }} UTC"
