@@ -22,4 +22,4 @@ spec:
               sum(rate(flask_http_request_total{namespace="demo"}[1m])),
               1
             )
-      successCondition: result[0] < 0.1
+      successCondition: result[0] < 0.05
