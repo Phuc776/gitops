@@ -1,0 +1,25 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: api-email-alert
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  route:
+    receiver: personal-email
+    matchers:
+      - name: alertname
+        value: ApiHighErrorRate
+  receivers:
+    - name: personal-email
+      emailConfigs:
+        - to: dophuc776@gmail.com
+          from: dophuc776@gmail.com
+          smarthost: smtp.gmail.com:587
+          authUsername: dophuc776@gmail.com
+          authPassword:
+            name: gmail-smtp-secret
+            key: password
+          requireTLS: true
+          sendResolved: true
