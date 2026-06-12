@@ -20,7 +20,7 @@ spec:
               sum(rate(flask_http_request_total{namespace="demo"}[1m])),
               1
             ) > 0.1
-          for: 1m
+          for: 0m
           labels:
             severity: warning
             app: api
